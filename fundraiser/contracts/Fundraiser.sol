@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: GPL-3.0-or-later
 pragma solidity >=0.4.22 <0.9.0;
 
-import "@openzeppelin/contracts/access/Ownable.sol";
-import "@openzeppelin/contracts/math/SafeMath.sol";
+import "openzeppelin-solidity/contracts/access/Ownable.sol";
+import "openzeppelin-solidity/contracts/math/SafeMath.sol";
 
 contract Fundraiser is Ownable {
     using SafeMath for uint256;
@@ -48,10 +48,11 @@ contract Fundraiser is Ownable {
         beneficiary = _beneficiary;
     }
 
-    function myDonations() public view returns (
-        uint256[] memory values,
-        uint256[] memory dates ) {
-            
+    function myDonations()
+        public
+        view
+        returns (uint256[] memory values, uint256[] memory dates)
+    {
         uint256 count = myDonationsCount();
         values = new uint256[](count);
         dates = new uint256[](count);
